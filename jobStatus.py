@@ -30,8 +30,8 @@ for i in range(total_jobs):
                 buildinfo = server.get_build_info(jobname,build['number'])
                 buildno = buildinfo['number']
                 buildnumber = str(buildno)
-                url  = "http://jenkins:jenkins@18.219.186.185:8080/job/" + jobname + "/" + buildnumber + "/api/json"    #Replace 'your_jenkins_endpoint' with your Jenkins URL
-                url1 = "http://jenkins:jenkins@18.219.186.185:8080/job/"  + jobname + "/" + buildnumber + "/buildTimestamp"
+                url  = "http://" + jenkins_username + ":" + jenkins_password + "@18.219.186.185:8080/job/" + jobname + "/" + buildnumber + "/api/json"    #Replace 'your_jenkins_endpoint' with your Jenkins URL
+                url1 = "http://" + jenkins_username + ":" + jenkins_password + "@18.219.186.185:8080/job/"  + jobname + "/" + buildnumber + "/buildTimestamp"
                 data = requests.get(url).json()
                 data1 = requests.get(url1)
                 data2 = data1.content
