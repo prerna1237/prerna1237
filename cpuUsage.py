@@ -2,6 +2,11 @@
 import psutil
 import smtplib
 import subprocess
+import sys
+
+username = sys.argv[1]
+password = sys.argv[2]
+print(f"USERNAME={username}, PASSWORD={password}")
 
 # gives a single float value
 cpuUsage = psutil.cpu_percent(10)
